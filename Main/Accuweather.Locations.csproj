@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Accuweather.Api</RootNamespace>
+    <RepositoryUrl>https://github.com/dmitryershov0/accuweather</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/dmitryershov0/accuweather</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Accuweather.Core" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>
