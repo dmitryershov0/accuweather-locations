@@ -157,7 +157,7 @@ namespace Accuweather.Locations
 				type = (int?)type.Value,
 				details
 			};
-			var url = $"{_url}/poi/search/?apikey={_apiKey}&";
+			var url = $"{_url}/poi/search?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
@@ -171,7 +171,7 @@ namespace Accuweather.Locations
 				type = (int?)type.Value,
 				details
 			};
-			var url = $"{_url}/poi/{countryCode}/{adminCode}/search/?apikey={_apiKey}&";
+			var url = $"{_url}/poi/{countryCode}/{adminCode}/search?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
@@ -185,7 +185,7 @@ namespace Accuweather.Locations
 				type = (int?)type.Value,
 				details
 			};
-			var url = $"{_url}/poi/{countryCode}/search/?apikey={_apiKey}&";
+			var url = $"{_url}/poi/{countryCode}/search?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
