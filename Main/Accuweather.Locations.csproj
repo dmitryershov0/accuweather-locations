@@ -5,6 +5,11 @@
     <RootNamespace>Accuweather.Locations</RootNamespace>
     <RepositoryUrl>https://github.com/dmitryershov0/accuweather-locations</RepositoryUrl>
     <DocumentationFile>..\Accuweather.Locations.xml</DocumentationFile>
+    <PackageId>Accuweather.Locations</PackageId>
+    <Version>1.0.0</Version>
+    <PackageDescription>
+     Api client accuweather locations
+     </PackageDescription>
   </PropertyGroup>
 
   <ItemGroup>
