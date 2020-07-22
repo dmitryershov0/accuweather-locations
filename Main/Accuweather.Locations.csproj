@@ -2,9 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Accuweather.Api</RootNamespace>
-    <RepositoryUrl>https://github.com/dmitryershov0/accuweather</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/dmitryershov0/accuweather</PackageProjectUrl>
+    <RootNamespace>Accuweather.Locations</RootNamespace>
+    <RepositoryUrl>https://github.com/dmitryershov0/accuweather-locations</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

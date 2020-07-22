@@ -9,7 +9,7 @@ namespace Accuweather.Locations
 	{
 		#region Pivate
 
-		private const string _url = "http://dataservice.accuweather.com/location/v1";
+		private const string _url = "http://dataservice.accuweather.com/locations/v1";
 		private object GetLanguageObject
 		{
 			get
@@ -39,25 +39,25 @@ namespace Accuweather.Locations
 				language = _language,
 				offset
 			};
-			var url = $"{_url}/adminareas/{areaCode}?apikey={_apiKey}";
+			var url = $"{_url}/adminareas/{areaCode}?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
 		public async Task<string> GetCountryList(string countryCode)
 		{
-			var url = $"{_url}/countries/{countryCode}?apikey={_apiKey}";
+			var url = $"{_url}/countries/{countryCode}?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(GetLanguageObject, url));
 		}
 
 		public async Task<string> GetRegionList()
 		{
-			var url = $"{_url}/regions?apikey={_apiKey}";
+			var url = $"{_url}/regions?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(GetLanguageObject, url));
 		}
 
 		public async Task<string> GetTopCitiesList(int group, bool details = false)
 		{
-			var url = $"{_url}/topcities/{group}?apikey={_apiKey}";
+			var url = $"{_url}/topcities/{group}?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(GetLanguageDetailsObject(details), url));
 		}
 
@@ -73,7 +73,7 @@ namespace Accuweather.Locations
 				q = searchText,
 				language = _language
 			};
-			var url = $"{_url}/cities/autocomplete?apikey={_apiKey}";
+			var url = $"{_url}/cities/autocomplete?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
@@ -83,13 +83,13 @@ namespace Accuweather.Locations
 
 		public async Task<string> SearchByLocationKey(string locationKey, bool details = false)
 		{
-			var url = $"{_url}/{locationKey}?apikey={_apiKey}";
+			var url = $"{_url}/{locationKey}?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(GetLanguageDetailsObject(details), url));
 		}
 
 		public async Task<string> GetCityNeighbors(string locationKey, bool details = false)
 		{
-			var url = $"{_url}/cities/neighbors/{locationKey}?apikey={_apiKey}";
+			var url = $"{_url}/cities/neighbors/{locationKey}?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(GetLanguageDetailsObject(details), url));
 		}
 
@@ -110,7 +110,7 @@ namespace Accuweather.Locations
 				offset,
 				alias
 			};
-			var url = $"{_url}/cities/search?apikey={_apiKey}";
+			var url = $"{_url}/cities/search?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
@@ -125,7 +125,7 @@ namespace Accuweather.Locations
 				offset,
 				alias
 			};
-			var url = $"{_url}/countries/{countryCode}/{adminCode}/search?apikey={_apiKey}";
+			var url = $"{_url}/countries/{countryCode}/{adminCode}/search?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
@@ -140,7 +140,7 @@ namespace Accuweather.Locations
 				offset,
 				alias
 			};
-			var url = $"{_url}/cities/{countryCode}/search?apikey={_apiKey}";
+			var url = $"{_url}/cities/{countryCode}/search?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
@@ -156,7 +156,7 @@ namespace Accuweather.Locations
 				type,
 				details
 			};
-			var url = $"{_url}/poi/search/?apikey={_apiKey}";
+			var url = $"{_url}/poi/search/?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
@@ -170,7 +170,7 @@ namespace Accuweather.Locations
 				type,
 				details
 			};
-			var url = $"{_url}/poi/{countryCode}/{adminCode}/search/?apikey={_apiKey}";
+			var url = $"{_url}/poi/{countryCode}/{adminCode}/search/?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
@@ -184,7 +184,7 @@ namespace Accuweather.Locations
 				type,
 				details
 			};
-			var url = $"{_url}/poi/{countryCode}/search/?apikey={_apiKey}";
+			var url = $"{_url}/poi/{countryCode}/search/?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
@@ -200,7 +200,7 @@ namespace Accuweather.Locations
 				language = _language,
 				details
 			};
-			var url = $"{_url}/postalcodes/search?apikey={_apiKey}";
+			var url = $"{_url}/postalcodes/search?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(GetLanguageObject, url));
 		}
 		public async Task<string> PostalCodeSearch(string countryCode, string searchText, bool details = false)
@@ -211,7 +211,7 @@ namespace Accuweather.Locations
 				language = _language,
 				details
 			};
-			var url = $"{_url}/postalcodes/{countryCode}/search?apikey={_apiKey}";
+			var url = $"{_url}/postalcodes/{countryCode}/search?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
@@ -230,7 +230,7 @@ namespace Accuweather.Locations
 				offset,
 				alias
 			};
-			var url = $"{_url}/search?apikey={_apiKey}";
+			var url = $"{_url}/search?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(GetLanguageObject, url));
 		}
 		public async Task<string> TextSearch(string countryCode, string searchText, bool details = false,
@@ -244,7 +244,7 @@ namespace Accuweather.Locations
 				offset,
 				alias
 			};
-			var url = $"{_url}/{countryCode}/search?apikey={_apiKey}";
+			var url = $"{_url}/{countryCode}/search?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
@@ -259,7 +259,7 @@ namespace Accuweather.Locations
 				offset,
 				alias
 			};
-			var url = $"{_url}/{countryCode}/{adminCode}/search?apikey={_apiKey}";
+			var url = $"{_url}/{countryCode}/{adminCode}/search?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
@@ -283,7 +283,7 @@ namespace Accuweather.Locations
 				topLevel
 			};
 
-			var url = $"{_url}/cities/geoposition/search?apikey={_apiKey}";
+			var url = $"{_url}/cities/geoposition/search?apikey={_apiKey}&";
 
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
@@ -299,7 +299,7 @@ namespace Accuweather.Locations
 				language = _language,
 				details
 			};
-			var url = $"{_url}/cities/ipaddress?apikey={_apiKey}";
+			var url = $"{_url}/cities/ipaddress?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 		#endregion IP Address
