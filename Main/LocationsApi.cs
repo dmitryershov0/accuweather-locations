@@ -232,8 +232,9 @@ namespace Accuweather.Locations
 				alias
 			};
 			var url = $"{_url}/search?apikey={_apiKey}&";
-			return await SendGetRequest(UrlEncodeHelper.UrlEncode(GetLanguageObject, url));
+			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
+		
 		public async Task<string> TextSearch(string countryCode, string searchText, bool details = false,
 			int? offset = null, string alias = null)
 		{
