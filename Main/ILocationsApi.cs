@@ -242,7 +242,7 @@ namespace Accuweather.Locations
 		/// <param name="ipAddress">Text to search for. In this case, the text should be a valid ip address.</param>
 		/// <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
 		/// <returns>JSON Object <seealso cref="Accuweather.Core.Models.Response"/></returns>
-		Task<string> GeoPositionSearch(string ipAddress, bool details = false);
+		Task<string> IpAddressSearch(string ipAddress, bool details = false);
 		#endregion IP Address
 	}
 }

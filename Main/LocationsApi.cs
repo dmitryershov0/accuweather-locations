@@ -292,7 +292,7 @@ namespace Accuweather.Locations
 		#endregion GeoPosition
 
 		#region IP Address
-		public async Task<string> GeoPositionSearch(string ipAddress, bool details = false)
+		public async Task<string> IpAddressSearch(string ipAddress, bool details = false)
 		{
 			var obj = new
 			{
