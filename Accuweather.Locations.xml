@@ -196,7 +196,7 @@
             </param>
              <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
         </member>
-        <member name="M:Accuweather.Locations.ILocationsApi.GeoPositionSearch(System.String,System.Boolean)">
+        <member name="M:Accuweather.Locations.ILocationsApi.IpAddressSearch(System.String,System.Boolean)">
             <summary>
             Returns information about a specific location, by IP Address.
             </summary>
