@@ -4,6 +4,11 @@
         <name>Accuweather.Locations</name>
     </assembly>
     <members>
+        <member name="T:Accuweather.Locations.Enums.POI">
+            <summary>
+            Points of Interest Type
+            </summary>
+        </member>
         <member name="T:Accuweather.Locations.ILocationsApi">
             <summary>
             The Locations API allows users to get a location key for their desired location.
@@ -96,7 +101,7 @@
             <param name="alias">Enumeration that specifies when alias locations should be included in the results. By default, an alias will only be returned if no official match for the search text was found. Enumeration values: Never or Always</param>
             <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
         </member>
-        <member name="M:Accuweather.Locations.ILocationsApi.PointsOfInterestSearch(System.String,System.String,System.Boolean)">
+        <member name="M:Accuweather.Locations.ILocationsApi.PointsOfInterestSearch(System.String,System.Nullable{Accuweather.Locations.Enums.POI},System.Boolean)">
             <summary>
             Returns information for an array of Points of Interest that match the search text.
             </summary>
@@ -105,7 +110,7 @@
             <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
             <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
         </member>
-        <member name="M:Accuweather.Locations.ILocationsApi.PointsOfInterestSearch(System.String,System.String,System.String,System.String,System.Boolean)">
+        <member name="M:Accuweather.Locations.ILocationsApi.PointsOfInterestSearch(System.String,System.String,System.String,System.Nullable{Accuweather.Locations.Enums.POI},System.Boolean)">
             <summary>
             Returns information for an array of Points of Interest that match the search text.
             </summary>
@@ -116,7 +121,7 @@
             <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
             <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
         </member>
-        <member name="M:Accuweather.Locations.ILocationsApi.PointsOfInterestSearch(System.String,System.String,System.String,System.Boolean)">
+        <member name="M:Accuweather.Locations.ILocationsApi.PointsOfInterestSearch(System.String,System.String,System.Nullable{Accuweather.Locations.Enums.POI},System.Boolean)">
             <summary>
             Returns information for an array of Points of Interest that match the search text.
             </summary>
