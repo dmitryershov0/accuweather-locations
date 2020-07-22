@@ -81,6 +81,12 @@ namespace Accuweather.Locations
 
 		#region Location Key
 
+		public async Task<string> SearchByLocationKey(string locationKey, bool details = false)
+		{
+			var url = $"{_url}/{locationKey}?apikey={_apiKey}";
+			return await SendGetRequest(UrlEncodeHelper.UrlEncode(GetLanguageDetailsObject(details), url));
+		}
+
 		public async Task<string> GetCityNeighbors(string locationKey, bool details = false)
 		{
 			var url = $"{_url}/cities/neighbors/{locationKey}?apikey={_apiKey}";
@@ -141,11 +147,11 @@ namespace Accuweather.Locations
 		#endregion CitySearch
 
 		#region POI Search
-		public async Task<string> PointsOfInterestSerach(string serachText, string type = null, bool details = false)
+		public async Task<string> PointsOfInterestSearch(string searchText, string type = null, bool details = false)
 		{
 			var obj = new
 			{
-				q = serachText,
+				q = searchText,
 				language = _language,
 				type,
 				details
@@ -154,12 +160,12 @@ namespace Accuweather.Locations
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
-		public async Task<string> PointsOfInterestSerach(string countryCode, string adminCode,
-			string serachText, string type = null, bool details = false)
+		public async Task<string> PointsOfInterestSearch(string countryCode, string adminCode,
+			string searchText, string type = null, bool details = false)
 		{
 			var obj = new
 			{
-				q = serachText,
+				q = searchText,
 				language = _language,
 				type,
 				details
@@ -168,12 +174,12 @@ namespace Accuweather.Locations
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 
-		public async Task<string> PointsOfInterestSerach(string countryCode, string serachText,
+		public async Task<string> PointsOfInterestSearch(string countryCode, string searchText,
 			string type = null, bool details = false)
 		{
 			var obj = new
 			{
-				q = serachText,
+				q = searchText,
 				language = _language,
 				type,
 				details
