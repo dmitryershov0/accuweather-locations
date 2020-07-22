@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Accuweather.Locations</name>
+    </assembly>
+    <members>
+        <member name="T:Accuweather.Locations.ILocationsApi">
+            <summary>
+            The Locations API allows users to get a location key for their desired location.
+            This location key will then be used in the other APIs to retrieve weather data.
+            <para>Doc: https://developer.accuweather.com/accuweather-locations-api/apis</para>
+            </summary>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.GetAreaList(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Returns basic information about administrative areas in the specified country.
+            </summary>
+            <param name="areaCode"></param>
+            <param name="offset">Integer, along with the limit (25) that determines the first resource to be returned. If no offset is provided, the max number (100) of results will be returned.</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.GetCountryList(System.String)">
+            <summary>
+            Returns basic information about all countries within a specified region.
+            </summary>
+            <param name="countryCode">Unique ID to search for a specific location.</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.GetRegionList">
+            <summary>
+            Returns basic information about all regions.
+            </summary>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.GetTopCitiesList(System.Int32,System.Boolean)">
+            <summary>
+            Returns information for the top 50, 100, or 150 cities, worldwide.
+            </summary>
+            <param name="group">Integer that indicates the number to return with the request. Current supported values are 50, 100 and 150.</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.AutoCompleteSearch(System.String)">
+            <summary>
+            Returns basic information about locations matching an autocomplete of the search text.
+            </summary>
+            <param name="searchText">Text to use for Autocomplete search.</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.SearchByLocationKey(System.String,System.Boolean)">
+            <summary>
+            Returns information about a specific location, by location key. You must know the location key to perform this query.
+            </summary>
+            <param name="locationKey">Unique ID to search for a specific location.</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.GetCityNeighbors(System.String,System.Boolean)">
+            <summary>
+            Returns information about a specific location, by location key. You must know the location key to perform this query.
+            </summary>
+            <param name="locationKey">Unique ID to search for a specific location.</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.CitySearch(System.String,System.Boolean,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Returns information for an array of cities that match the search text.
+            </summary>
+            <param name="searchText">Text to search for.</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <param name="offset">Integer, along with the limit (25) that determines the first resource to be returned. If no offset is provided, the max number (100) of results will be returned.</param>
+            <param name="alias">Enumeration that specifies when alias locations should be included in the results. By default, an alias will only be returned if no official match for the search text was found. Enumeration values: Never or Always</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.CitySearch(System.String,System.String,System.String,System.Boolean,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Returns information for an array of cities that match the search text.
+            </summary>
+            <param name="countryCode">Unique ID to search for a specific location.</param>
+            <param name="adminCode">Unique ID to search for a specific location.</param>
+            <param name="searchText">Text to search for.</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <param name="offset">Integer, along with the limit (25) that determines the first resource to be returned. If no offset is provided, the max number (100) of results will be returned.</param>
+            <param name="alias">Enumeration that specifies when alias locations should be included in the results. By default, an alias will only be returned if no official match for the search text was found. Enumeration values: Never or Always</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.CitySearch(System.String,System.String,System.Boolean,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Returns information for an array of cities that match the search text.
+            </summary>
+            <param name="countryCode">Unique ID to search for a specific location.</param>
+            <param name="searchText">Text to search for.</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <param name="offset">Integer, along with the limit (25) that determines the first resource to be returned. If no offset is provided, the max number (100) of results will be returned.</param>
+            <param name="alias">Enumeration that specifies when alias locations should be included in the results. By default, an alias will only be returned if no official match for the search text was found. Enumeration values: Never or Always</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.PointsOfInterestSearch(System.String,System.String,System.Boolean)">
+            <summary>
+            Returns information for an array of Points of Interest that match the search text.
+            </summary>
+            <param name="searchText">Text to search for.</param>
+            <param name="type">POI type ID</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.PointsOfInterestSearch(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Returns information for an array of Points of Interest that match the search text.
+            </summary>
+            <param name="countryCode">Unique ID to search for a specific location.</param>
+            <param name="adminCode">Unique ID to search for a specific location.</param>
+            <param name="searchText">Text to search for.</param>
+            <param name="type">POI type ID</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.PointsOfInterestSearch(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Returns information for an array of Points of Interest that match the search text.
+            </summary>
+            <param name="countryCode">Unique ID to search for a specific location.</param>
+            <param name="searchText">Text to search for.</param>
+            <param name="type">POI type ID</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.PostalCodeSearch(System.String,System.Boolean)">
+            <summary>
+            Returns information for an array of Postal Codes that match the search text.
+            </summary>
+            <param name="searchText">Text to search for.</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.PostalCodeSearch(System.String,System.String,System.Boolean)">
+            <summary>
+            Returns information for an array of Postal Codes that match the search text.
+            </summary>
+            <param name="countryCode">Unique ID to search for a specific location.</param>
+            <param name="searchText">Text to search for.</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.TextSearch(System.String,System.Boolean,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Returns information for an array of locations that match the search text.
+            </summary>
+            <param name="searchText">Text to search for.</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <param name="offset">Integer, along with the limit (25) that determines the first resource to be returned. If no offset is provided, the max number (100) of results will be returned.</param>
+            <param name="alias">Enumeration that specifies when alias locations should be included in the results. By default, an alias will only be returned if no official match for the search text was found. Enumeration values: Never or Always</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.TextSearch(System.String,System.String,System.Boolean,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Returns information for an array of locations that match the search text. Results are narrowed by entering a countryCode in the path.
+            </summary>
+            <param name="countryCode">Unique ID to search for a specific location.</param>
+            <param name="searchText">Text to search for.</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <param name="offset">Integer, along with the limit (25) that determines the first resource to be returned. If no offset is provided, the max number (100) of results will be returned.</param>
+            <param name="alias">Enumeration that specifies when alias locations should be included in the results. By default, an alias will only be returned if no official match for the search text was found. Enumeration values: Never or Always</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.TextSearch(System.String,System.String,System.String,System.Boolean,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Returns information for an array of locations that match the search text. Results are narrowed by entering a countryCode and adminCode in the path.
+            </summary>
+            <param name="countryCode">Unique ID to search for a specific location.</param>
+            <param name="adminCode">Unique ID to search for a specific location.</param>
+            <param name="searchText">Text to search for.</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <param name="offset">Integer, along with the limit (25) that determines the first resource to be returned. If no offset is provided, the max number (100) of results will be returned.</param>
+            <param name="alias">Enumeration that specifies when alias locations should be included in the results. By default, an alias will only be returned if no official match for the search text was found. Enumeration values: Never or Always</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.GeoPositionSearch(System.Double,System.Double,System.Boolean,System.Boolean)">
+             <summary>
+             Returns information about a specific location, by GeoPosition (Latitude and Longitude).
+             </summary>
+             <param name="lat">Latitude</param>
+             <param name="lon">Longitude</param>
+             <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+             <param name="topLevel">
+             When toplevel=true, the city with the highest rank will be returned.
+             Large cities have higher rank than the neighborhoods within them, so toplevel=true delivers
+             a more generic location result. (Example: 40.73,-74.00 returns Greenwich Village, NY when toplevel=false.
+             If toplevel=true, the same lat/lon pair will return New York, NY.)
+            </param>
+             <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+        <member name="M:Accuweather.Locations.ILocationsApi.GeoPositionSearch(System.String,System.Boolean)">
+            <summary>
+            Returns information about a specific location, by IP Address.
+            </summary>
+            <param name="ipAddress">Text to search for. In this case, the text should be a valid ip address.</param>
+            <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
+            <returns>JSON Object <seealso cref="T:Accuweather.Core.Models.Response"/></returns>
+        </member>
+    </members>
+</doc>
