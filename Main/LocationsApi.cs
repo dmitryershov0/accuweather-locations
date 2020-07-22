@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Accuweather.Core;
 using Accuweather.Core.Helpers;
+using Accuweather.Locations.Enums;
 
 namespace Accuweather.Locations
 {
@@ -147,13 +148,13 @@ namespace Accuweather.Locations
 		#endregion CitySearch
 
 		#region POI Search
-		public async Task<string> PointsOfInterestSearch(string searchText, string type = null, bool details = false)
+		public async Task<string> PointsOfInterestSearch(string searchText, POI? type = null, bool details = false)
 		{
 			var obj = new
 			{
 				q = searchText,
 				language = _language,
-				type,
+				type = (int?)type.Value,
 				details
 			};
 			var url = $"{_url}/poi/search/?apikey={_apiKey}&";
@@ -161,13 +162,13 @@ namespace Accuweather.Locations
 		}
 
 		public async Task<string> PointsOfInterestSearch(string countryCode, string adminCode,
-			string searchText, string type = null, bool details = false)
+			string searchText, POI? type = null, bool details = false)
 		{
 			var obj = new
 			{
 				q = searchText,
 				language = _language,
-				type,
+				type = (int?)type.Value,
 				details
 			};
 			var url = $"{_url}/poi/{countryCode}/{adminCode}/search/?apikey={_apiKey}&";
@@ -175,13 +176,13 @@ namespace Accuweather.Locations
 		}
 
 		public async Task<string> PointsOfInterestSearch(string countryCode, string searchText,
-			string type = null, bool details = false)
+			POI? type = null, bool details = false)
 		{
 			var obj = new
 			{
 				q = searchText,
 				language = _language,
-				type,
+				type = (int?)type.Value,
 				details
 			};
 			var url = $"{_url}/poi/{countryCode}/search/?apikey={_apiKey}&";

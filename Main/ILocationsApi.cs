@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Accuweather.Locations.Enums;
 
 namespace Accuweather.Locations
 {
@@ -123,7 +124,7 @@ namespace Accuweather.Locations
 		/// <param name="type">POI type ID</param>
 		/// <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
 		/// <returns>JSON Object <seealso cref="Accuweather.Core.Models.Response"/></returns>
-		Task<string> PointsOfInterestSearch(string searchText, string type = null, bool details = false);
+		Task<string> PointsOfInterestSearch(string searchText, POI? type = null, bool details = false);
 
 		/// <summary>
 		/// Returns information for an array of Points of Interest that match the search text.
@@ -135,7 +136,7 @@ namespace Accuweather.Locations
 		/// <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
 		/// <returns>JSON Object <seealso cref="Accuweather.Core.Models.Response"/></returns>
 		Task<string> PointsOfInterestSearch(string countryCode, string adminCode,
-		   string searchText, string type = null, bool details = false);
+		   string searchText, POI? type = null, bool details = false);
 
 		/// <summary>
 		/// Returns information for an array of Points of Interest that match the search text.
@@ -146,7 +147,7 @@ namespace Accuweather.Locations
 		/// <param name="details">Boolean value specifies whether or not to include full details in the response.</param>
 		/// <returns>JSON Object <seealso cref="Accuweather.Core.Models.Response"/></returns>
 		Task<string> PointsOfInterestSearch(string countryCode, string searchText,
-		   string type = null, bool details = false);
+		   POI? type = null, bool details = false);
 
 		#endregion POI Search
 
