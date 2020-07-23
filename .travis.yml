@@ -6,4 +6,4 @@ dotnet: netstandard2.0
 before_script:
   - dotnet restore ./Main/Accuweather.Locations.csproj
 script:  
-  - dotnet build ./Main/Accuweather.Locations.csproj -c Release -f 
+  - dotnet build ./Main/Accuweather.Locations.csproj -c Release -f netstandard2.0
