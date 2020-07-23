@@ -12,7 +12,8 @@ namespace Accuweather.Tests
 	{
 		private ILocationsApi _api;
 
-		public Locations()
+		[SetUp]
+		public void init()
 		{
 			var apiKey = "YOUR_API_KEY";
 			_api = new LocationsApi(apiKey, "ru-ru");
@@ -159,7 +160,7 @@ namespace Accuweather.Tests
 			StatusCodeIsOk(resultJson);
 		}
 
-
+		[Test]
 		public async Task GeoPositionSearch()
 		{
 			var resultJson = await _api.GeoPositionSearch(53.347, 83.778, true);

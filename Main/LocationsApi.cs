@@ -202,7 +202,7 @@ namespace Accuweather.Locations
 				details
 			};
 			var url = $"{_url}/postalcodes/search?apikey={_apiKey}&";
-			return await SendGetRequest(UrlEncodeHelper.UrlEncode(GetLanguageObject, url));
+			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
 		public async Task<string> PostalCodeSearch(string countryCode, string searchText, bool details = false)
 		{
@@ -234,7 +234,7 @@ namespace Accuweather.Locations
 			var url = $"{_url}/search?apikey={_apiKey}&";
 			return await SendGetRequest(UrlEncodeHelper.UrlEncode(obj, url));
 		}
-		
+
 		public async Task<string> TextSearch(string countryCode, string searchText, bool details = false,
 			int? offset = null, string alias = null)
 		{
