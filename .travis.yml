@@ -1,0 +1,9 @@
+anguage: csharp  
+sudo: required  
+dist: trusty  
+mono: none
+dotnet: netstandard2.0
+before_script:
+  - dotnet restore ./Main/Accuweather.Locations.csproj
+script:  
+  - dotnet build ./Main/Accuweather.Locations.csproj -c Release -f 
